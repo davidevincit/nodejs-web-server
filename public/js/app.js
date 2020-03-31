@@ -13,8 +13,8 @@ weatherForm.addEventListener('submit', (e) => {
     messageOne.textContent = 'Loading...'
     messageTwo.textContent = ''
 
-
-    fetch('http://localhost:3000/weather?address=' + location).then((response) => {
+    //http://localhost:3000 dominio locale, in rete viene impostato da heroku
+    fetch('/weather?address=' + location).then((response) => {
         response.json().then((data) => {
 
             if (data.errore) {
